@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 150);
+            $table->string('email', 150)->unique();
+            $table->string('telefono', 20)->default('000-000-0000');
+            
             $table->timestamps();
+
+            $table->index('nombre');
+            $table->index('email');
         });
     }
 
