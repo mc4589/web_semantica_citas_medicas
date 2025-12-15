@@ -13,7 +13,26 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table->date('fecha');
+            $table->time('hora');
+            $table->text('descripcion')->nullable();
+            
+            //Clave foranea explicita a medicos
+            $table->foreignId('medico_id')
+                  ->constrained('medicos')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+            //Clave foranea explicita a pacientes
+            $table->foreignId('paciente_id')
+                  ->constrained('pacientes')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+               
             $table->timestamps();
+
+            //Indice compuesto para busquedas comunes (ej. citas por medico y fecha)
+            $table->index(['medico_id', 'fecha']);
+            $table->index(['paciente_id', 'fecha']);
         });
     }
 
