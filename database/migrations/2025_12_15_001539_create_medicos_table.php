@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('medicos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 150);
+            $table->string('email', 150)->unique();
+            
+            //Clave foranea explicita
+            $table->foreignId('especialidad_id')
+                  ->constrained('especialidades')
+                  ->onUpdate('cascade')
+                  ->onDelete('restrict')
+            
             $table->timestamps();
+
+            $table->index('nombre');
+            $table->index('email');
         });
     }
 
