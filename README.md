@@ -57,6 +57,8 @@ Prefijo: `/api/v1`
 Todas las rutas web utilizan vistas Blade con diseño unificado, menú de navegación y carga dinámica de datos vía Fetch API.
 
 ## Instrucciones de Ejecución
+* Levantar el servicio de vite con el puerto 5173 (ejecutamos el comando npm run dev)
+* Levantamos el servicio de laravel con el puerto 8000 (ejecutamos el comando  php artisan serve).
 
 ### Requisitos
 * PHP ≥ 8.2
