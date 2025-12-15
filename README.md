@@ -28,3 +28,44 @@ Claves principales:
 * En las vistas web se inyecta JSON-LD mediante `<script type="application/ld+json">` para mejorar el SEO y la indexación por crawlers (Google, Bing).
 * La aplicación interactiva demuestra consumo real máquina-a-máquina de datos semánticos.
 
+
+## Modelos y Mapeo Semántico (Schema.org)
+
+| Modelo       | @type en JSON-LD      | Propiedades principales                                      |
+|--------------|-----------------------|--------------------------------------------------------------|
+| Cita         | MedicalAppointment    | identifier, description, scheduledTime, doctor, patient      |
+| Médico       | Physician             | identifier, name, email, medicalSpecialty                    |
+| Paciente     | Patient               | identifier, name, email, telephone                           |
+| Especialidad | MedicalSpecialty      | identifier, name                                             |
+
+Todos los modelos utilizan el trait `HasJsonLd` y definen `toJsonLd()` para generar el objeto semántico.
+
+## Rutas Principales
+
+### Rutas API (JSON con JSON-LD)
+Prefijo: `/api/v1`
+
+* `GET /citas` → Listado de citas
+* `GET /citas/{id}` → Detalle de cita
+* `GET /medicos`, `/pacientes`, `/especialidades` → Similar
+
+### Rutas Web Interactivas
+* `/citas-web` → Listado interactivo de citas
+* `/citas-web/{id}` → Detalle interactivo de cita
+* `/medicos-web`, `/pacientes-web`, `/especialidades-web` → Similar
+
+Todas las rutas web utilizan vistas Blade con diseño unificado, menú de navegación y carga dinámica de datos vía Fetch API.
+
+## Instrucciones de Ejecución
+
+### Requisitos
+* PHP ≥ 8.2
+* Composer
+* Node.js + npm
+* MySQL o SQLite
+
+### Pasos
+1. **Clonar el repositorio**
+   ```bash
+   git clone <url-del-repositorio>
+   cd laravel-gestion-citas-medicas
