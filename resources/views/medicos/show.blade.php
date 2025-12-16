@@ -21,3 +21,10 @@
         <p><strong>Especialidad:</strong> <span data-campo="especialidad.nombre">cargando...</span></p>
     </div>
 
+     <div id="jsonld-api-detalle" class="jsonld-container">
+        <h3>JSON-LD recibido desde la API (endpoint show)</h3>
+        <p>Cargando JSON-LD semántico único...</p>
+    </div>
+@endsection
+
+
