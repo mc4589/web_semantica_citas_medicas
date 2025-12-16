@@ -25,3 +25,11 @@
         </tbody>
     </table>
 
+    <div id="paginacion-api" class="paginacion-api"></div>
+
+    <div id="jsonld-api-listado" class="jsonld-container">
+        <h3>JSON-LD devueltos por la API (listado)</h3>
+        <p>Cargando JSON-LD semánticos desde la respuesta de la API...</p>
+    </div>
+@endsection
+
