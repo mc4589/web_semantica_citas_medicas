@@ -12,3 +12,12 @@
     </script>
 
     <h3 style="color: #28a745; margin-top: 0;">Información cargada desde la API</h3>
+
+    <div class="detalle-api">
+        <h4>Detalles del Médico</h4>
+        <p><strong>ID:</strong> <span data-campo="id">cargando...</span></p>
+        <p><strong>Nombre:</strong> <span data-campo="nombre">cargando...</span></p>
+        <p><strong>Email:</strong> <span data-campo="email">cargando...</span></p>
+        <p><strong>Especialidad:</strong> <span data-campo="especialidad.nombre">cargando...</span></p>
+    </div>
+
