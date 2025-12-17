@@ -11,6 +11,7 @@ class Especialidad extends Model
 {
     use HasFactory, HasJsonLd;
 
+    protected $table = 'especialidades';
     protected $fillable = ['nombre'];
     
     // Define las relaciones que deben cargarse si este modelo fuera la entidad principal en una respuesta
